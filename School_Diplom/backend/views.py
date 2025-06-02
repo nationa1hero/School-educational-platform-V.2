@@ -72,6 +72,42 @@ def export_task_results(request):
     else:
         return redirect('home')
 
+@require_POST
+def solve_task(request):
+    # 1) Извлекаем текущего пользователя
+    user = request.user
+    if not user or not user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'Неавторизованный пользователь'}, status=403)
+
+    user_id = str(user.id)          # Важно: GameManager работает со строками
+    task_id = request.POST.get('task_id')
+
+    # 2) Проверяем, что task_id передан
+    if not task_id:
+        return JsonResponse({'status': 'error', 'message': 'Не указан task_id'}, status=400)
+
+    # 3) Ваша логика проверки правильности решения (валидация, сравнение с тест-кейсами и т. д.)
+    #    Предположим, у вас есть функция mark_task_solved, которая заносит результат в БД/файл
+    success = mark_task_solved(user_id, task_id)
+    if not success:
+        return JsonResponse({'status': 'error', 'message': 'Задача не решена или уже решена'}, status=400)
+
+    # 4) Определяем уровень задачи через get_task_level
+    level = get_task_level(task_id)  # 1, 2 или 3
+
+    # 5) Создаём экземпляр GameManager и обновляем состояние пользователя
+    gm = GameManager()
+    gm.update_user_after_task(user_id, level)
+
+    # 6) Формируем ответ JSON с текущими значениями
+    updated_user = gm.users.get(user_id, {})
+    response_data = {
+        'status': 'ok',
+        'points': updated_user.get('points', 0),
+        'rank': updated_user.get('rank', 1),
+        'achievements': updated_user.get('achievements', []),
+    }
+    return JsonResponse(response_data)
 
 def register(request):
     if request.method == 'POST':

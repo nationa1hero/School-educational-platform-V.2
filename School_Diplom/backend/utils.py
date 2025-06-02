@@ -1,5 +1,7 @@
 from celery import shared_task
 from .models import AssignedTask, Task, Student, TaskResult
+import json
+from django.conf import settin
 
 
 def assign_tasks_to_student(student):
@@ -41,6 +43,25 @@ def assign_tasks_to_student(student):
             AssignedTask.objects.create(student=student, task=task, current_task_index=index)
             index += 1
 
+gs
+
+def get_task_level(task_id):
+    """
+    Читает data/tasks.json и возвращает уровень задачи (1, 2 или 3).
+    Если задача не найдена, возвращает 1 по умолчанию.
+    """
+    tasks_path = settings.GAMIFICATION_TASKS_JSON
+    try:
+        with open(tasks_path, 'r', encoding='utf-8') as f:
+            tasks = json.load(f)
+    except FileNotFoundError:
+        return 1
+
+    for t in tasks:
+        # Допускаем, что t["id"] и task_id могут быть как int, так и строкой
+        if str(t.get("id")) == str(task_id):
+            return t.get("level", 1)
+    return 1
 
 @shared_task
 def assign_tasks_to_students():

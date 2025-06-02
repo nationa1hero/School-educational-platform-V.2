@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Новичок",
+    "condition_key": "points",
+    "condition_value": 10
+  },
+  {
+    "name": "Упорный Ученик",
+    "condition_key": "points",
+    "condition_value": 50
+  },
+  {
+    "name": "Средний Ученик",
+    "condition_key": "points",
+    "condition_value": 100
+  },
+  {
+    "name": "Умелец Баллов",
+    "condition_key": "points",
+    "condition_value": 200
+  },
+  {
+    "name": "Продвинутый Ученик",
+    "condition_key": "points",
+    "condition_value": 300
+  },
+  {
+    "name": "Эксперт Баллов",
+    "condition_key": "points",
+    "condition_value": 400
+  },
+  {
+    "name": "Гуру Баллов",
+    "condition_key": "points",
+    "condition_value": 500
+  },
+  {
+    "name": "Мастер Баллов",
+    "condition_key": "points",
+    "condition_value": 600
+  },
+  {
+    "name": "Чемпион Баллов",
+    "condition_key": "points",
+    "condition_value": 700
+  },
+  {
+    "name": "Легенда Баллов",
+    "condition_key": "points",
+    "condition_value": 800
+  },
+  {
+    "name": "Решил 5 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 5
+  },
+  {
+    "name": "Решил 10 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 10
+  },
+  {
+    "name": "Решил 20 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 20
+  },
+  {
+    "name": "Решил 30 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 30
+  },
+  {
+    "name": "Решил 40 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 40
+  },
+  {
+    "name": "Решил 50 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 50
+  },
+  {
+    "name": "Решил 60 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 60
+  },
+  {
+    "name": "Решил 70 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 70
+  },
+  {
+    "name": "Решил 80 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 80
+  },
+  {
+    "name": "Решил 100 задач",
+    "condition_key": "tasks_solved",
+    "condition_value": 100
+  },
+  {
+    "name": "Достиг Ранга 3",
+    "condition_key": "rank",
+    "condition_value": 3
+  },
+  {
+    "name": "Достиг Ранга 5",
+    "condition_key": "rank",
+    "condition_value": 5
+  },
+  {
+    "name": "Достиг Ранга 7",
+    "condition_key": "rank",
+    "condition_value": 7
+  },
+  {
+    "name": "Достиг Ранга 10",
+    "condition_key": "rank",
+    "condition_value": 10
+  },
+  {
+    "name": "Достиг Ранга 12",
+    "condition_key": "rank",
+    "condition_value": 12
+  },
+  {
+    "name": "Достиг Ранга 15",
+    "condition_key": "rank",
+    "condition_value": 15
+  },
+  {
+    "name": "Достиг Ранга 18",
+    "condition_key": "rank",
+    "condition_value": 18
+  },
+  {
+    "name": "Достиг Ранга 20",
+    "condition_key": "rank",
+    "condition_value": 20
+  },
+  {
+    "name": "Достиг Ранга 25",
+    "condition_key": "rank",
+    "condition_value": 25
+  },
+  {
+    "name": "Достиг Ранга 30",
+    "condition_key": "rank",
+    "condition_value": 30
+  }
+]
